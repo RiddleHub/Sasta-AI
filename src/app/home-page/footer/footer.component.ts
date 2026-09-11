@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { PopupComponent } from 'src/app/popup/popup.component';
+import { FormControl, FormGroup, NgForm, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Api } from 'src/services/Api.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { PopupComponent } from 'src/app/popup/popup.component';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, MatDialogModule]
 })
 export class FooterComponent {
 

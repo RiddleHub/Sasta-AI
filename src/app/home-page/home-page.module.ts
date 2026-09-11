@@ -13,9 +13,11 @@ const routes: Routes = [
   },
 ]
 
-@NgModule({ declarations: [HomePageComponent, FooterComponent], imports: [CommonModule,
-        CommonModule,
-        RouterModule.forChild(routes),
-        FormsModule,
-        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({ imports: [
+    HomePageComponent,
+    FooterComponent,
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class HomePageModule { }

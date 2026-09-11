@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
 declare var webkitSpeechRecognition: any;
 
 @Component({
   selector: 'app-voice-to-text',
   templateUrl: './voice-to-text.component.html',
   styleUrls: ['./voice-to-text.component.scss'],
+  standalone: true,
+  imports: [MatCardModule]
 })
 export class VoiceToTextComponent {
 

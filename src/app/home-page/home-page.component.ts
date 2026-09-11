@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   trigger,
   state,
@@ -7,12 +7,16 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { CommonModule } from '@angular/common';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule, RouterModule, FooterComponent]
 })
 
 export class HomePageComponent {

@@ -13,16 +13,18 @@ const routes: Routes = [
   },
 ]
 
-@NgModule({ declarations: [ChatGptComponent], imports: [CommonModule,
-        RouterModule.forChild(routes),
-        FormsModule,
-        ReactiveFormsModule,
-        MarkdownModule.forRoot({
-            clipboardOptions: {
-                provide: CLIPBOARD_OPTIONS,
-                useValue: {
-                    buttonComponent: ClipboardButtonComponent,
-                },
-            }
-        })], providers: [provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({ imports: [
+    ChatGptComponent,
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    MarkdownModule.forRoot({
+        clipboardOptions: {
+            provide: CLIPBOARD_OPTIONS,
+            useValue: {
+                buttonComponent: ClipboardButtonComponent,
+            },
+        }
+    })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class ChatGptModule { }

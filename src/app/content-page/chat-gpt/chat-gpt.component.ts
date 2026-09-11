@@ -6,20 +6,32 @@ import {
   OnInit
 } from '@angular/core';
 import { Api } from 'src/services/Api.service';
-import { MarkdownService } from 'ngx-markdown';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MarkdownService, MarkdownModule } from 'ngx-markdown';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { catchError, EMPTY } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorPageComponent } from 'src/app/error-page/error-page.component';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { VoiceToTextComponent } from '../voice-to-text/voice-to-text.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-chat-gpt',
   templateUrl: './chat-gpt.component.html',
   styleUrls: ['./chat-gpt.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MarkdownModule,
+    MatDialogModule,
+    RouterModule,
+    // @ts-ignore - used programmatically via MatDialog.open()
+    VoiceToTextComponent,
+    DatePipe
+  ]
 })
 
 export class ChatGptComponent implements OnInit, AfterViewInit {

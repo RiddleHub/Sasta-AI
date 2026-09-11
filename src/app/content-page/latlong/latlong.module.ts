@@ -14,12 +14,12 @@ const routes: Routes = [
   },
 ]
 
-@NgModule({ declarations: [
-        LatlongComponent
-    ], imports: [CommonModule,
-        RouterModule.forChild(routes),
-        MatInputModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatOptionModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({ imports: [
+    LatlongComponent,
+    CommonModule,
+    RouterModule.forChild(routes),
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatOptionModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class LatlongModule { }

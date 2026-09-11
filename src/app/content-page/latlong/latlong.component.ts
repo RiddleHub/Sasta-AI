@@ -1,11 +1,26 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Api } from 'src/services/Api.service';
+import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-latlong',
   templateUrl: './latlong.component.html',
-  styleUrls: ['./latlong.component.scss']
+  styleUrls: ['./latlong.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatOptionModule,
+    MatFormFieldModule,
+    MatSelectModule
+  ]
 })
 export class LatlongComponent {
 

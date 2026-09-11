@@ -1,6 +1,5 @@
-@import '@angular/material/prebuilt-themes/purple-green.css';
-// @import "node_modules/@angular/material/theming";
-@import './assets/sass/variable.scss';
+@use '@angular/material/prebuilt-themes/purple-green.css';
+@use './assets/sass/variable.scss';
 
 // @include mat-core();
 

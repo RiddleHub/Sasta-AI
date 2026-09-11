@@ -8,18 +8,32 @@ import {
   TemplateRef,
   ViewChild,
 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Router, RouterModule } from '@angular/router';
 import { catchError, EMPTY, Observable, Observer } from 'rxjs';
 import { ErrorPageComponent } from 'src/app/error-page/error-page.component';
 import { Api } from 'src/services/Api.service';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-dell-e',
   templateUrl: './dell-e.component.html',
   styleUrls: ['./dell-e.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    RouterModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule
+  ]
 })
 export class DellEComponent implements OnInit, AfterViewInit {
 

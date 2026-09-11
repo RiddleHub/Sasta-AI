@@ -1,15 +1,27 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { KeycloakApi } from 'src/services/Keycloak.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Api } from 'src/services/Api.service';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { CommonModule, SlicePipe } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    RouterModule,
+    CommonModule,
+    SlicePipe,
+    MatMenuModule,
+    MatIconModule,
+    MatDialogModule
+  ],
   animations: [
     trigger('routeAnimation', [
       transition(':enter', [

@@ -13,16 +13,18 @@ const routes: Routes = [
   },
 ]
 
-@NgModule({ declarations: [DellEComponent], imports: [CommonModule,
-        RouterModule.forChild(routes),
-        FormsModule,
-        ReactiveFormsModule,
-        MarkdownModule.forRoot({
-            clipboardOptions: {
-                provide: CLIPBOARD_OPTIONS,
-                useValue: {
-                    buttonComponent: ClipboardButtonComponent,
-                },
-            }
-        })], providers: [provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({ imports: [
+    DellEComponent,
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    MarkdownModule.forRoot({
+        clipboardOptions: {
+            provide: CLIPBOARD_OPTIONS,
+            useValue: {
+                buttonComponent: ClipboardButtonComponent,
+            },
+        }
+    })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class DellEModule { }
